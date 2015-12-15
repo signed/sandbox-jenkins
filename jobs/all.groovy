@@ -31,6 +31,16 @@ mavenJob('secure-service/DSL-Tutorial-1-Test') {
     jdk('jdk8u66')
 
     goals('clean verify')
+
+
+    configure {
+        it / reporters << 'hudson.maven.reporters.MavenMailer' {
+            recipients("dummy")
+            dontNotifyEveryUnstableBuild(false)
+            sendToIndividuals(false)
+            perModuleEmail(true)
+        }
+    }
 }
 
 
