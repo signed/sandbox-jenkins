@@ -9,3 +9,19 @@ job('DSL-Tutorial-1-Test') {
         maven('-e clean test')
     }
 }
+
+
+job('example') {
+    steps {
+        shell('echo "first step"')
+    }
+    // configure the XCode builder plugin as second step
+    configure { project ->
+        project / builders << 'au.com.rayh.XCodeBuilder' {
+            // add necessary elements here
+        }
+    }
+    steps {
+        shell('echo "last step"')
+    }
+}
