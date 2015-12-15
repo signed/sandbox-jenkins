@@ -20,7 +20,7 @@ folder('secure-service'){
 
 }
 
-job('secure-service/DSL-Tutorial-1-Test') {
+mavenJob('secure-service/DSL-Tutorial-1-Test') {
     scm {
         git('https://github.com/signed/sandbox-jenkins.git')
     }
