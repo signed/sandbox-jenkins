@@ -6,6 +6,7 @@ job('DSL-Tutorial-1-Test') {
         scm('H/15 * * * *')
     }
     steps {
+        mavenInstallation('mvn_3.3.9')
         maven('-e clean test')
     }
 }
