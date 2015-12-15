@@ -9,7 +9,7 @@ job('DSL-Tutorial-1-Test') {
         maven {
             goals('clean')
             goals('verify')
-            mavenInstallation('Maven 3.1.1')
+            mavenInstallation('mvn_3.3.9')
         }
     }
 }
