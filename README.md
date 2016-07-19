@@ -4,6 +4,7 @@
 * [job dsl sandbox](http://job-dsl.herokuapp.com/)
 * [API-Viewer](https://jenkinsci.github.io/job-dsl-plugin/)
 * [Tutorial Using the Jenkins Job DSL](https://github.com/jenkinsci/job-dsl-plugin/wiki/Tutorial---Using-the-Jenkins-Job-DSL)
+* [job dsl gradle example projet setup](https://github.com/sheehan/job-dsl-gradle-example)
 
 ## Blog posts
 ### [delving into job dsl](http://www.praqma.com/stories/delving-into-job-dsl/)
