@@ -1,0 +1,17 @@
+version: '3'
+services:
+  gogs:
+    image: "gogs/gogs:0.11.53"
+    ports:
+     - "10022:22"
+     - "10080:3000"
+    volumes:
+     - ./var/gogs:/data
+
+  jenkins:
+    image: "jenkins/jenkins:lts"
+    ports:
+     - "8080:8080"
+     - "50000:50000"
+    volumes:
+     - ./var/jenkins:/var/jenkins_home
