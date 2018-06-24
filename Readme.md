@@ -1,3 +1,10 @@
+# Steps to get started
+1. `docker-compose up`
+1. configure gogs
+1. configure jenkins
+   1. install recommended plugins
+   1. configure docker in global tools
+
 
 Details about the [jenkins docker image](https://github.com/jenkinsci/docker/blob/master/README.md).
 
