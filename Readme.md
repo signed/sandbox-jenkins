@@ -5,3 +5,7 @@ Details about the [gogs docker image](https://github.com/gogs/gogs/tree/master/d
 
 
 Run [docker outside of docker](https://container-solutions.com/running-docker-in-jenkins-in-docker/) with jenkins and a [later blog post](https://getintodevops.com/blog/the-simple-way-to-run-docker-in-docker-for-ci)
+
+https://forums.docker.com/t/mounting-using-var-run-docker-sock-in-a-container-not-running-as-root/34390
+
+use [tags](https://jenkins.io/blog/2018/05/16/pipelines-with-git-tags/) to alter pipeline execution https://jenkins.io/blog/2018/05/16/pipelines-with-git-tags/
