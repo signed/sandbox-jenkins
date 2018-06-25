@@ -7,4 +7,4 @@ RUN mvn clean test && mvn clean
 FROM maven:3.5.4
 
 WORKDIR /root
-COPY --from=builder /root/.m2/repository/ ./root/.m2/repository
+COPY --from=builder /root/.m2/repository/ /root/.m2/repository
