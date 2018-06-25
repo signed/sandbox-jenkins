@@ -1,7 +1,7 @@
 FROM maven:3.5.4 as builder
 
-ADD ./pom.xml /src/pom.xml
-WORKDIR /src
+ADD . src/
+WORKDIR src/
 RUN mvn clean test && mvn clean
 
 FROM maven:3.5.4
