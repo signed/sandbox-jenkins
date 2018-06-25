@@ -9,7 +9,7 @@ pipeline {
         stage('test') {
             steps {
                 sh 'cd jenkinsfile && mvn test'
-                junit('**/target/*.xml')
+                junit('**/target/**/*.xml')
             }
         }
 
