@@ -1,5 +1,10 @@
-FROM maven:3.5.4
+FROM maven:3.5.4 as builder
 
 ADD ./pom.xml /src/pom.xml
 WORKDIR /src
-RUN mvn clean test -DskipTests && mvn clean
+RUN mvn clean test && mvn clean
+
+FROM maven:3.5.4
+
+WORKDIR /root
+COPY --from=builder /root/.m2/repository/ ./root/.m2/repository
