@@ -4,7 +4,9 @@
 1. configure jenkins
    1. install recommended plugins
    1. configure docker in global tools
+1. Build the primed maven image in jenkinsifle/build_primed_image_for_ci.sh
 
+https://dzone.com/articles/dockerizing-jenkins-2-setup-and-using-it-along-wit
 
 Details about the [jenkins docker image](https://github.com/jenkinsci/docker/blob/master/README.md).
 
