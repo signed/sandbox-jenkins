@@ -10,10 +10,14 @@ pipeline {
         stage('the parallel quest') {
             parallel {
                 stage('one') {
-                    sh 'echo one'
+                    steps {
+                        sh 'echo one'
+                    }
                 }
                 stage('two') {
-                    sh 'echo two'
+                    steps {
+                        sh 'echo two'
+                    }
                 }
             }
         }
