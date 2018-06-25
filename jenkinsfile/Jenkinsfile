@@ -11,7 +11,10 @@ pipeline {
                 sh 'cd jenkinsfile && mvn test'
                 junit('**/target/**/*.xml')
             }
+            steps {
+                sh 'echo "output" > result.txt'
+                archiveArtifacts artifacts: '*.txt', fingerprint: true
+            }
         }
-
     }
 }
