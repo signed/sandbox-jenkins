@@ -6,18 +6,17 @@ pipeline {
         timestamps()
     }
 
-    stage {
-        parallel {
-            stage('one') {
-                sh 'echo one'
-            }
-            stage('two') {
-                sh 'echo two'
+    stages {
+        stage('the parallel quest') {
+            parallel {
+                stage('one') {
+                    sh 'echo one'
+                }
+                stage('two') {
+                    sh 'echo two'
+                }
             }
         }
-    }
-
-    stages {
         stage('build') {
             steps {
                 sh 'mvn --version'
