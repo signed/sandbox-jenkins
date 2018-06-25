@@ -6,7 +6,7 @@ pipeline {
         timestamps()
     }
 
-    stages {
+    stage {
         parallel {
             stage('one') {
                 sh 'echo one'
