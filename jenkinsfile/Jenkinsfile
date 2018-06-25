@@ -8,15 +8,16 @@ pipeline {
 
     stages {
         stage('the parallel quest') {
+            failFast true
             parallel {
                 stage('one') {
                     steps {
-                        sh 'echo one'
+                        echo "one"
                     }
                 }
                 stage('two') {
                     steps {
-                        sh 'echo two'
+                        echo "two"
                     }
                 }
             }
