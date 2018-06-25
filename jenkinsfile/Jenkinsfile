@@ -1,5 +1,22 @@
 pipeline {
     agent { docker { image 'primed_with_maven' } }
+
+    options {
+        disableConcurrentBuilds()
+        timestamps()
+    }
+
+    stages {
+        parallel {
+            stage('one') {
+                sh 'echo one'
+            }
+            stage('two') {
+                sh 'echo two'
+            }
+        }
+    }
+
     stages {
         stage('build') {
             steps {

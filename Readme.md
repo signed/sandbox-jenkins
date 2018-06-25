@@ -18,3 +18,9 @@ Run [docker outside of docker](https://container-solutions.com/running-docker-in
 https://forums.docker.com/t/mounting-using-var-run-docker-sock-in-a-container-not-running-as-root/34390
 
 use [tags](https://jenkins.io/blog/2018/05/16/pipelines-with-git-tags/) to alter pipeline execution https://jenkins.io/blog/2018/05/16/pipelines-with-git-tags/
+
+
+# sample jenkins files
+* https://stackoverflow.com/questions/46669535/how-to-define-parallel-stages-in-a-declarative-jenkinsfile
+  * parallel
+  * options
