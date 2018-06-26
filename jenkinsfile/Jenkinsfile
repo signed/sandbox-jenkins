@@ -55,5 +55,15 @@ pipeline {
 
             }
         }
+        stage('deploy') {
+            // https://jenkins.io/doc/book/pipeline/syntax/#when
+            when {
+                branch 'master'
+            }
+            steps{
+                sh 'ship it'
+            }
+        }
+
     }
 }
