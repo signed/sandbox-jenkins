@@ -19,6 +19,9 @@ https://forums.docker.com/t/mounting-using-var-run-docker-sock-in-a-container-no
 
 use [tags](https://jenkins.io/blog/2018/05/16/pipelines-with-git-tags/) to alter pipeline execution https://jenkins.io/blog/2018/05/16/pipelines-with-git-tags/
 
+# Documenttion
+
+* https://jenkins.io/doc/pipeline/steps/
 
 # sample jenkins files
 * https://stackoverflow.com/questions/46669535/how-to-define-parallel-stages-in-a-declarative-jenkinsfile
