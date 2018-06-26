@@ -27,3 +27,6 @@ use [tags](https://jenkins.io/blog/2018/05/16/pipelines-with-git-tags/) to alter
   
 * https://github.com/jfrog/project-examples
   * sample for artifactory
+  
+* https://github.com/funkwerk/jenkins-workflow
+  * contains some samples
