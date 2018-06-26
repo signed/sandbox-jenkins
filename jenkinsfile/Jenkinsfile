@@ -3,6 +3,7 @@
 pipeline {
     agent { docker { image 'primed_with_maven' } }
 
+    // see https://jenkins.io/doc/book/pipeline/syntax/#options for details
     options {
         disableConcurrentBuilds()
         timestamps()
