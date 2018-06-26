@@ -24,6 +24,12 @@ use [tags](https://jenkins.io/blog/2018/05/16/pipelines-with-git-tags/) to alter
 * https://jenkins.io/doc/pipeline/steps/
 * https://jenkins.io/doc/book/pipeline/syntax/
 
+# Blog
+* http://www.baeldung.com/jenkins-pipelines (scripted pipeline sample)
+* BlazeMeter
+  * https://www.blazemeter.com/blog/how-to-use-the-jenkins-declarative-pipeline?utm_source=blog&utm_medium=BM_blog&utm_campaign=how-to-use-the-jenkins-scripted-pipeline (declarative)
+  * https://www.blazemeter.com/blog/how-to-use-the-jenkins-scripted-pipeline (scripted)
+
 # sample jenkins files
 * https://stackoverflow.com/questions/46669535/how-to-define-parallel-stages-in-a-declarative-jenkinsfile
   * parallel
