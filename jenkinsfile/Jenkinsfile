@@ -1,9 +1,6 @@
 pipeline {
     agent { docker { image 'primed_with_maven' } }
 
-    currentBuild.displayName = 'displayName from pipeline'
-    currentBuild.description = 'description from pipeline'
-
     options {
         disableConcurrentBuilds()
         timestamps()
@@ -17,7 +14,7 @@ pipeline {
         stage('the parallel quest') {
             failFast true
             parallel {
-                stage('one') {
+                stage('access parameters') {
                     steps {
                         echo "Hello ${params.PERSON}"
                     }
@@ -25,6 +22,8 @@ pipeline {
                 stage('two') {
                     steps {
                         echo "two"
+                        currentBuild.displayName = 'displayName from pipeline'
+                        currentBuild.description = 'description from pipeline'
                     }
                 }
             }
