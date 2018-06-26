@@ -22,8 +22,10 @@ pipeline {
                 stage('two') {
                     steps {
                         echo "two"
-                        currentBuild.displayName = 'displayName from pipeline'
-                        currentBuild.description = 'description from pipeline'
+                        script {
+                            currentBuild.displayName = 'displayName from pipeline'
+                            currentBuild.description = 'description from pipeline'
+                        }
                     }
                 }
             }
