@@ -24,3 +24,6 @@ use [tags](https://jenkins.io/blog/2018/05/16/pipelines-with-git-tags/) to alter
 * https://stackoverflow.com/questions/46669535/how-to-define-parallel-stages-in-a-declarative-jenkinsfile
   * parallel
   * options
+  
+* https://github.com/jfrog/project-examples
+  * sample for artifactory
