@@ -6,13 +6,17 @@ pipeline {
         timestamps()
     }
 
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+    }
+
     stages {
         stage('the parallel quest') {
             failFast true
             parallel {
                 stage('one') {
                     steps {
-                        echo "one"
+                        echo "Hello ${params.PERSON}"
                     }
                 }
                 stage('two') {
