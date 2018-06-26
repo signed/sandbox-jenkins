@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 pipeline {
     agent { docker { image 'primed_with_maven' } }
 
