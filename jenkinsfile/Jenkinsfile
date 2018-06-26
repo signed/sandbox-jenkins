@@ -8,6 +8,10 @@ pipeline {
         timestamps()
     }
 
+    environment {
+        VARIABLE = 'environment variable'
+    }
+
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
     }
@@ -16,14 +20,14 @@ pipeline {
         stage('the parallel quest') {
             failFast true
             parallel {
-                stage('access parameters') {
+                stage('access parameters and environment variables') {
                     steps {
                         echo "Hello ${params.PERSON}"
+                        echo "Hello ${env.VARIABLE}"
                     }
                 }
-                stage('two') {
+                stage('setting build information') {
                     steps {
-                        echo "two"
                         script {
                             currentBuild.displayName = 'displayName from pipeline'
                             currentBuild.description = 'description from pipeline http://localhost <a href=http://localhost> link </a>'
