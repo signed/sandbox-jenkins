@@ -31,7 +31,7 @@ pipeline {
                     steps {
                         script {
                             currentBuild.displayName = 'displayName from pipeline'
-                            currentBuild.description = 'description from pipeline http://localhost <a href=http://localhost> link </a>'
+                            currentBuild.description = '‘‘description from pipeline http://localhost <a href="http://localhost" target="_blank"> link </a>'''
                         }
                     }
                 }
