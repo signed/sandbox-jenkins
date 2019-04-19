@@ -1,7 +1,7 @@
 #!groovy
 
 def variablesAtTheTop = 'value from the top'
-def publish = 'no'
+def scriptInput = 'no'
 def declarativeInput
 
 pipeline {
@@ -18,7 +18,7 @@ pipeline {
             agent none
             steps {
                 script {
-                    publish = input message: 'User input required',
+                    scriptInput = input message: 'User input required',
                             parameters: [choice(name: 'Tag on Docker Hub', choices: 'no\nyes', description: 'Choose "yes" if you want to deploy this build')]
                 }
             }
@@ -47,7 +47,7 @@ pipeline {
                 allOf {
                     environment name: 'FLAG', value: 'enabled'
                     expression {
-                        'yes' == publish
+                        'yes' == scriptInput
                     }
                 }
             }
