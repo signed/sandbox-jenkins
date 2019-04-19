@@ -25,34 +25,30 @@ pipeline {
                     ticketKey = response.data.key
                 }
                 script {
-                    def transitionInput =
-                            [
-                                    transition: [
-                                            id   : '11', // start issue
-                                            input: 'potato potato'
-                                    ]
-                            ]
-
-                    jiraTransitionIssue idOrKey: ticketKey, input: transitionInput
+                    transition(ticketKey, 'Start Progress')
                 }
 
                 script {
-                    def transitions = jiraGetIssueTransitions idOrKey: ticketKey
-                    echo transitions.data.toString()
-                    def transitionid = transitions.data.transitions.find { it.name == 'Done' }.id
-
-                    def transitionInput =
-                            [
-                                    transition: [
-                                            id   : transitionid,
-                                            input: 'potato potato'
-                                    ]
-                            ]
-
-                    jiraTransitionIssue idOrKey: ticketKey, input: transitionInput
+                    transition(ticketKey, 'Done')
                 }
-
             }
         }
     }
+}
+
+private void transition(ticketKey, transitionName) {
+    def transitions = jiraGetIssueTransitions idOrKey: ticketKey
+    def transition = transitions.data.transitions.find { it.name == transitionName }
+    if (null == transition) {
+        def availableTransitions = transitions.data.transitions.collect { it.name }.join(', ')
+        error message: "there is no '${transitionName}' available, only [${availableTransitions}]"
+    }
+    def transitionid = transition.id
+    def transitionInput =
+            [
+                    transition: [
+                            id: transitionid,
+                    ]
+            ]
+    jiraTransitionIssue idOrKey: ticketKey, input: transitionInput
 }
