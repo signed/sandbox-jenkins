@@ -18,7 +18,7 @@ pipeline {
                     def testIssue = [fields: [
                             project    : [key: 'FAN'],
                             issuetype  : [name: 'Task'],
-                            summary    : 'Deploying to stage and live',
+                            summary    : 'Deploy to live',
                             description: '[click|https://example.org] New JIRA Created from Jenkins.'
                     ]]
 
