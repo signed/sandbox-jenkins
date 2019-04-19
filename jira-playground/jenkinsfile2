@@ -2,6 +2,7 @@
 
 def variablesAtTheTop = 'value from the top'
 def publish = 'no'
+def declarativeInput
 
 pipeline {
     agent none
@@ -34,6 +35,9 @@ pipeline {
             }
             steps {
                 echo "Hello, ${PERSON}, nice to meet you."
+                script {
+                    declarativeInput = env.PERSON
+                }
             }
         }
 
@@ -48,7 +52,7 @@ pipeline {
                 }
             }
             steps {
-                echo 'wup di du ' + variablesAtTheTop + ' ' + env.FLAG
+                echo 'wup di du ' + variablesAtTheTop + ' ' + env.FLAG + ' ' + declarativeInput
             }
         }
     }
