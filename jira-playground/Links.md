@@ -1,0 +1,6 @@
+- [jenkins pipeline top 10 best practices](https://www.cloudbees.com/blog/top-10-best-practices-jenkins-pipeline-plugin)
+- [pipeline steps reference](https://jenkins.io/doc/pipeline/steps/)
+- [Declarative pipeline refcard](https://www.cloudbees.com/sites/default/files/declarative-pipeline-refcard.pdf)
+- [shared libraries](https://jenkins.io/doc/book/pipeline/shared-libraries/)
+- [pipeline syntax reference](https://jenkins.io/doc/book/pipeline/syntax/)
+- [share data between steps](https://stackoverflow.com/questions/43879733/jenkinsfile-declarative-pipeline-defining-dynamic-env-vars/43881731)

@@ -1,0 +1,40 @@
+#!groovy
+
+def variablesAtTheTop = 'value from the top'
+def publish = 'no'
+
+pipeline {
+    agent none
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        timeout(time: 120, unit: 'MINUTES')
+    }
+    environment {
+        FLAG = 'enabled'
+    }
+    stages {
+        stage('Decide tag on Docker Hub') {
+            agent none
+            steps {
+                script {
+                    publish = input message: 'User input required',
+                            parameters: [choice(name: 'Tag on Docker Hub', choices: 'no\nyes', description: 'Choose "yes" if you want to deploy this build')]
+                }
+            }
+        }
+        stage('Tag on Docker Hub') {
+            agent any
+            when {
+                allOf {
+                    environment name: 'FLAG', value: 'enabled'
+                    expression {
+                        'yes' == publish
+                    }
+                }
+            }
+            steps {
+                echo 'wup di du ' + variablesAtTheTop + ' ' + env.FLAG
+            }
+        }
+    }
+}

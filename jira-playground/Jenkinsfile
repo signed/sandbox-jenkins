@@ -1,0 +1,20 @@
+#!groovy
+
+node {
+    timeout(time: 5, unit: 'DAYS') {
+        input message: 'Approve deployment?', submitter: 'it-ops'
+    }
+    stage('JIRA') {
+
+        def testIssue = [fields: [
+                project    : [key: 'FAN'],
+                summary    : 'Deploying to stage and live',
+                description: 'New JIRA Created from Jenkins.',
+                issuetype  : [name: 'Task']]]
+
+        response = jiraNewIssue site: 'banana', issue: testIssue
+
+        echo response.successful.toString()
+        echo response.data.toString()
+    }
+}
