@@ -1,4 +1,5 @@
 #!groovy
+def ticketKey
 
 pipeline {
     agent none
@@ -13,17 +14,28 @@ pipeline {
         stage('Create Jira Ticket') {
             agent any
             steps {
-                script{
+                script {
                     def testIssue = [fields: [
                             project    : [key: 'FAN'],
+                            issuetype  : [name: 'Task'],
                             summary    : 'Deploying to stage and live',
-                            description: 'New JIRA Created from Jenkins.',
-                            issuetype  : [name: 'Task']]]
-
+                            description: 'New JIRA Created from Jenkins.'
+                    ]]
                     response = jiraNewIssue issue: testIssue
-                    echo response.successful.toString()
-                    echo response.data.toString()
+                    ticketKey = response.data.key
                 }
+                script {
+                    def transitionInput =
+                            [
+                                    transition: [
+                                            id   : '11', // start issue
+                                            input: 'potato potato'
+                                    ]
+                            ]
+
+                    def response = jiraTransitionIssue idOrKey: ticketKey, input: transitionInput
+                }
+
             }
         }
     }
