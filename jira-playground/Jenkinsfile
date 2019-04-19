@@ -11,7 +11,7 @@ pipeline {
         timeout(time: 120, unit: 'MINUTES')
     }
     environment {
-        FLAG = 'enabled'
+        JIRA_SITE = 'banana'
     }
     stages {
 
@@ -25,7 +25,7 @@ pipeline {
                             description: 'New JIRA Created from Jenkins.',
                             issuetype  : [name: 'Task']]]
 
-                    response = jiraNewIssue site: 'banana', issue: testIssue
+                    response = jiraNewIssue issue: testIssue
                     echo response.successful.toString()
                     echo response.data.toString()
                 }
