@@ -19,8 +19,9 @@ pipeline {
                             project    : [key: 'FAN'],
                             issuetype  : [name: 'Task'],
                             summary    : 'Deploying to stage and live',
-                            description: 'New JIRA Created from Jenkins.'
+                            description: '[click|https://example.org] New JIRA Created from Jenkins.'
                     ]]
+
                     response = jiraNewIssue issue: testIssue
                     ticketKey = response.data.key
                 }
