@@ -43,7 +43,7 @@ use [tags](https://jenkins.io/blog/2018/05/16/pipelines-with-git-tags/) to alter
   
   
 # Commands
-- docker-compose up --build  jenkins
+- docker-compose up --build  jenkins admin admin
 - docker-compose up -d jira  master atlassian  
 # Run Jira
 - https://riptutorial.com/jira/topic/9049/starting-a-local-jira-test-instance
