@@ -1,0 +1,16 @@
+#!groovy
+
+pipeline {
+    agent none
+    stages {
+        stage('Add link to the side bar') {
+            agent none
+            steps {
+                script {
+                    currentBuild.displayName = "The name."
+                    currentBuild.description = "The best description."
+                }
+            }
+        }
+    }
+}
