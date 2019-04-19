@@ -1,20 +1,35 @@
 #!groovy
 
-node {
-    timeout(time: 5, unit: 'DAYS') {
-        input message: 'Approve deployment?', submitter: 'it-ops'
+def variablesAtTheTop = 'value from the top'
+def scriptInput = 'no'
+def declarativeInput
+
+pipeline {
+    agent none
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        timeout(time: 120, unit: 'MINUTES')
     }
-    stage('JIRA') {
+    environment {
+        FLAG = 'enabled'
+    }
+    stages {
 
-        def testIssue = [fields: [
-                project    : [key: 'FAN'],
-                summary    : 'Deploying to stage and live',
-                description: 'New JIRA Created from Jenkins.',
-                issuetype  : [name: 'Task']]]
+        stage('Tag on Docker Hub') {
+            agent any
+            steps {
+                script{
+                    def testIssue = [fields: [
+                            project    : [key: 'FAN'],
+                            summary    : 'Deploying to stage and live',
+                            description: 'New JIRA Created from Jenkins.',
+                            issuetype  : [name: 'Task']]]
 
-        response = jiraNewIssue site: 'banana', issue: testIssue
-
-        echo response.successful.toString()
-        echo response.data.toString()
+                    response = jiraNewIssue site: 'banana', issue: testIssue
+                    echo response.successful.toString()
+                    echo response.data.toString()
+                }
+            }
+        }
     }
 }
