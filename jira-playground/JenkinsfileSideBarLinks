@@ -4,7 +4,8 @@ pipeline {
     agent none
     options {
         sidebarLinks([
-                [displayName: 'Side Bar Example', iconFileName: 'userContent/alarm.png', urlName: 'http://example.com']
+                [displayName: 'Alarm', iconFileName: 'userContent/alarm.png', urlName: 'http://example.com'],
+                [displayName: 'Dice', iconFileName: 'userContent/dice.png', urlName: 'http://example.com']
         ])
     }
     stages {
