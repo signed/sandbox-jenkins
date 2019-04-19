@@ -9,3 +9,4 @@
 - [groovy collecdtions](http://docs.groovy-lang.org/next/html/documentation/working-with-collections.html)
 - [Jira Rest API](https://docs.atlassian.com/software/jira/docs/api/REST/8.1.0/)
 - [pipeline-utility-steps-plugin](https://github.com/jenkinsci/pipeline-utility-steps-plugin)
+- [Use Job Dsl in Pipeline scripts](https://github.com/jenkinsci/job-dsl-plugin/wiki/User-Power-Moves#use-job-dsl-in-pipeline-scripts)

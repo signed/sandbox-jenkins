@@ -1,0 +1,18 @@
+#!groovy
+
+pipeline {
+    agent none
+    options {
+        sidebarLinks([
+                [displayName: 'Side Bar Example', iconFileName: 'userContent/alarm.png', urlName: 'http://example.com']
+        ])
+    }
+    stages {
+        stage('Add link to the side bar') {
+            agent none
+            steps {
+                echo 'Just a placeholder'
+            }
+        }
+    }
+}
