@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.173-slim
+FROM jenkins/jenkins:2.178-slim
 USER root
 
 # Install the latest Docker CE binaries
