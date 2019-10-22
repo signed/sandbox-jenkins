@@ -11,3 +11,9 @@
 - [pipeline-utility-steps-plugin](https://github.com/jenkinsci/pipeline-utility-steps-plugin)
 - [Use Job Dsl in Pipeline scripts](https://github.com/jenkinsci/job-dsl-plugin/wiki/User-Power-Moves#use-job-dsl-in-pipeline-scripts)
 - [sonarqube plugin](https://github.com/jenkinsci/sonarqube-plugin)
+
+# pipeline library
+- https://dev.to/kuperadrian/how-to-setup-a-unit-testable-jenkins-shared-pipeline-library-2e62
+  this is exactly the testable solution I was looking for.
+
+- https://tomd.xyz/articles/jenkins-shared-library/
